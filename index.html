@@ -1,0 +1,215 @@
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
+<HEAD>
+	<TITLE>Pizza Order Form</TITLE>
+	<style>
+		.header {font-size: 20px;font-weight:bold;}
+		body {font-family: arial; vertical-align: middle;}
+		input {margin-bottom: 10px; margin-right: 10px; height: 40px; border-color: #e8e8e8;}
+		
+		label {margin-right: 10px; display: inline-block; width: 90px;}
+		.wider label {width: 150px; margin-top: 20px;}
+		button {padding: 10px 40px; background-color: #006eff; border-radius: 100px; border-color: transparent; font-size: 13px;margin-top: 10px;color: white; cursor: pointer; margin-right: 10px;}
+		.secondary {}
+		input[type="radio"] { height: auto !important; }
+		select {background: transparent;width: 245px;padding: 5px;font-size: 12px;line-height: 1;height: 34px;margin-bottom: 10px; 
+   }
+	</style>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css">
+</HEAD>
+<body style='background-color: #FFFFFF;'>
+	<br>
+	<h1>
+		<center>Pizza Order Form</center>
+	</h1>
+	<div id="pizza1">
+
+		<label>Pizza 1</label> 
+		<SELECT onChange="calcCost('pizza1')" id="pizza1Pizza" VALUE='' class="ui-selectmenu-button">
+			<OPTION VALUE='- $00.00' cost='0.0' selected="selected" class="ui-selectmenu-text">Choose Pizza</OPTION>
+			<OPTION VALUE='Small 6 Slices - no toppings' cost='6.75' topping='0'>Small 6
+				Slices - no toppings $6.75</OPTION>
+			<OPTION VALUE='Small 6 Slices - 1 topping' cost='7.50' topping='1'>Small 6
+				Slices - 1 topping $7.50</OPTION>
+			<OPTION VALUE='Medium 8 Slices - 2 toppings' cost='9.75' topping='2'>Medium 8
+				Slices - 2 toppings $9.75</OPTION>
+			<OPTION VALUE='Large 10 Slices - no toppings' cost='11.75' topping='0' >Large 10
+				Slices - no toppings $11.75</OPTION>
+			<OPTION VALUE='Large 10 Slices - 2 toppings' cost='13.50' topping='2' class="ui-selectmenu-text">Large 10
+				Slices - 2 toppings $13.50</OPTION>
+		</SELECT>
+		<br>
+		<label>Toppings 1</label> 
+		<SELECT class='toppings1'> <option value="" >Choose a Toppings 1</option>
+			<OPTION VALUE='Diced Mango'>Diced Mango</OPTION>
+			<OPTION VALUE='Olives'>Olives</OPTION>
+			<OPTION VALUE='Mushrooms'>Mushrooms</OPTION>
+			<OPTION VALUE='Caramelized onions'>Caramelized onions</OPTION>
+			<OPTION VALUE='Italian Ham'>Italian Ham</OPTION>
+			<OPTION VALUE='Classic Pepperoni'>Classic Pepperoni</OPTION>
+			<OPTION VALUE='Salami'>Salami</OPTION>
+			<OPTION VALUE='Provolone cheese'>Provolone cheese</OPTION>
+			<OPTION VALUE='Extra cheese'>Extra cheese</OPTION>
+			<OPTION VALUE='Mozzarella cheese'>Mozzarella cheese</OPTION>
+			<OPTION VALUE='Parmesan cheese'>Parmesan cheese</OPTION></SELECT> 
+			<br>
+			<label>Toppings2</label> 
+			 <SELECT class='toppings2'><option value="" >Choose a Toppings 2</option>
+			<OPTION VALUE='Diced Mango'>Diced Mango</OPTION>
+			<OPTION VALUE='Olives'>Olives</OPTION>
+			<OPTION VALUE='Mushrooms'>Mushrooms</OPTION>
+			<OPTION VALUE='Caramelized onions'>Caramelized onions</OPTION>
+			<OPTION VALUE='Italian Ham'>Italian Ham</OPTION>
+			<OPTION VALUE='Classic Pepperoni'>Classic Pepperoni</OPTION>
+			<OPTION VALUE='Salami'>Salami</OPTION>
+			<OPTION VALUE='Provolone cheese'>Provolone cheese</OPTION>
+			<OPTION VALUE='Extra cheese'>Extra cheese</OPTION>
+			<OPTION VALUE='Mozzarella cheese'>Mozzarella cheese</OPTION>
+			<OPTION VALUE='Parmesan cheese'>Parmesan cheese</OPTION></SELECT> 
+			<br>
+			
+			<label>Quantity</label><INPUT
+			VALUE='0' TYPE=TEXT SIZE=3 MAXLENGTH=5  id='pizza1Qty' onChange="calcCost('pizza1');"
+			style='padding: 7px 5px 7px 5px; font-family: Verdana; font-weight: normal; text-decoration: none; font-style: normal; font-size: 13px; color: #000000; background-color: #ffffff; border: 1px solid #d8d8d8;'>
+			<br>
+		<label>Cost</label><INPUT VALUE='0.00' TYPE=TEXT SIZE=10 MAXLENGTH=10 id='pizza1Cost' style='padding: 7px 5px 7px 5px; border: 1px solid #d8d8d8;' readonly>
+	<br>
+	
+	</div>
+	
+	
+		
+	
+	
+	
+	<br>
+	<br>
+	<br>
+	<div id="pickupInfo">
+		<h3>PICKUP INFORMATION </h3>
+
+		
+		<label>Name*</label><INPUT VALUE='' TYPE=TEXT SIZE=100 MAXLENGTH=100 id='name' style='padding: 7px 5px 7px 5px; border: 1px solid #d8d8d8;'><br>
+		<label>Email</label><INPUT VALUE='' TYPE=TEXT SIZE=100 MAXLENGTH=100 id='email' style='padding: 7px 5px 7px 5px; border: 1px solid #d8d8d8;'><br>
+		<label>Phone*</label><INPUT VALUE='' TYPE=TEXT SIZE=100 MAXLENGTH=100 id='phone' style='padding: 7px 5px 7px 5px; border: 1px solid #d8d8d8;'><br>
+		
+	</div>
+	
+	<h3>PAYMENT INFORMATION</h3>
+	<div id="paymentSection">
+		<div>
+			<INPUT type=radio id="ccpayment" VALUE='Credit Card on Pickup'">Credit Card&nbsp;
+			<INPUT type=radio id="cashpayment" VALUE='Cash on Pickup'>Cash on Pickup&nbsp;
+		</div>
+		
+		
+	
+	
+	</div>
+	<br>
+	<br>
+	<br>
+	<div>
+		<button onclick='placeOrder()' id='placeOrder'>Place Order</button>  <button onclick='resetFields()' id='reset'>Reset</button>
+	</div>
+	<div id="dialog" >
+  		<p></p>
+	</div>
+	
+
+	
+	 <script
+	  src="https://code.jquery.com/jquery-3.4.0.min.js"
+	  integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg="
+	  crossorigin="anonymous"></script>
+	  <script
+	  src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+	  integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+	  crossorigin="anonymous"></script>
+	<script Language='JavaScript'>
+	function resetFields() {
+		document.getElementById("pizza1Pizza").selectedIndex = 0;
+		document.getElementById("pizza1Qty").value = 0;
+		document.getElementById("pizza1Cost").value=0;
+
+
+
+
+		document.getElementById("ccpayment").checked = false;
+		document.getElementById("cashpayment").checked = false;
+
+
+		document.getElementById("name").value = "";
+		document.getElementById("email").value = "";
+
+		document.getElementById("phone").value = "";
+		
+		  
+
+	}
+	function placeOrder() {
+		var validation = "";
+		if(document.getElementById("name").value === "") {
+			validation += " Missing name <br>";
+		}
+		
+		if(document.getElementById("phone").value === "") {
+			validation += " Missing phone number <br>";
+		}
+		
+		if(validation === "") {
+			
+			var message = "Thank you for your order!\n";
+			message += "TOTAL: "+document.getElementById("pizza1Cost").value+"\n";
+			var pizza1qty =  parseInt(document.getElementById("pizza1Qty").value);
+			if(pizza1qty>0) {
+				var selectedPizza1 = document.getElementById("pizza1Pizza");
+				var pizza1 =  selectedPizza1.options[selectedPizza1.selectedIndex].value;
+				message += "\n"+pizza1;
+
+			}
+			
+			$("#dialog p").html(message);
+    		$("#dialog").dialog();
+
+			resetFields();
+		}
+		else {
+			$("#dialog p").html(validation);
+    		$("#dialog").dialog();
+
+		}
+		
+		
+	}
+	function calcCost(prefix){
+		var idQuantity = prefix +"Qty";
+		var idList = prefix+"Pizza"
+		var idCost = prefix+"Cost"
+		var quantity = document.getElementById(idQuantity).value;
+
+		var selectedPizza = document.getElementById(idList);
+		var cost =  selectedPizza.options[selectedPizza.selectedIndex].getAttribute("cost");
+		  var prod_tot = cost * quantity;
+		  
+		document.getElementById(idCost).value=prod_tot;
+
+	}
+
+
+	function showsection(showId,hideId) {
+		
+		var showEl = document.getElementById(showId);
+		showEl.style.display = 'block';    
+		var hideEl = document.getElementById(hideId);
+		hideEl.style.display = 'none';    
+		  
+
+	}
+	
+	
+
+
+	</script>
+
+</body>
+</html>
